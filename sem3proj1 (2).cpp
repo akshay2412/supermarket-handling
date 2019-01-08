@@ -528,6 +528,7 @@ public:
         cout<<"File created successfully."<<endl;
         file.seekp(0,ios::end);
         cout<<"enter details of user:\n";
+	cout<<"ENTER :-"<<" "<<"user_id"<<" "<<"user_role_id"<<" "<<"user_name"<<" "<<"user_email"<<" "<<"user_dob"<<" "<<"user_pass"<<endl;
         cin>>user_id>>user_role_id>>user_name>>user_email>>user_dob>>user_pass;
         file<<user_id<<" "<<user_role_id<<" "<<user_name<<" "<<user_email<<" "<<user_dob<<" "<<user_pass<<endl;
         file.close();
@@ -783,6 +784,12 @@ int main()
     user uobj;
     v=uobj.validate();
     if(v==1){
+    cout<<"Press 1 to add new user any other number to continue"<<endl;
+    cin>>d;
+    if(d==1)
+    {
+        uobj.ins();
+    }
     uobj.show();
     cout<<"Press 1 to enter management \nPress 2 to enter billing"<<endl;
     cin>>c;
