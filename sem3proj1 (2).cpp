@@ -643,7 +643,7 @@ class management:public stock              //for management work;
     public:
 int a[1000],c[1000],d[1000];               //for quantiy on price;
 
-int b[1000],count1=0,count=0;  //for most sold;
+int b[1000],count1=0,count=0,count2=0;  //for most sold;
 
 management()
 {
@@ -662,6 +662,8 @@ management()
 			count++;
 			b[count1]=product_qty;
 			count1++;
+		        d[count2]=product_id;
+		        count2++;
 
             file1>>product_id>>product_number>>product_type>>product_description>>product_price>>product_qty;
 
@@ -702,7 +704,7 @@ void showsorted()
 {int i;
 quickSortIterative (a,0,count);
 for(i=0;i<count;i++){
-cout<<a[i]<<endl;
+cout<<a[i]<<" "<<d[i]<<endl;
 }
 }
 void mostsold()
@@ -713,7 +715,7 @@ void showagain()
 {
 int i;
 for(i=count1-1;i>-1;i--){
-cout<<b[i]<<endl;
+cout<<b[i]<<" "<<d[i]<<endl;
 }
 }
    void showprod(int n)
