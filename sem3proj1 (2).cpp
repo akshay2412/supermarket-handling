@@ -124,6 +124,7 @@ class customer
         cout<<"File created successfully."<<endl;
         file.seekp(0,ios::end);
         cout<<"enter details of customer:\n";
+	cout<<"customer_id  "<<"customer_name  "<<"customer_mobile  "<<"customer_email  \n";
         cin>>customer_id>>customer_name>>customer_mobile>>customer_email;
         dobj.arr[i]=customer_id;
         i++;
@@ -170,6 +171,7 @@ class product
         cout<<"File created successfully."<<endl;
         file.seekp(0,ios::end);
         cout<<"enter details of product:\n";
+        cout<<"product_id  "<<"product_number  "<<"product_type "<<"product_description "<<"product_price  \n";
         cin>>product_id>>product_number>>product_type>>product_description>>product_price;
         file<<product_id<<" "<<product_number<<" "<<product_type<<" "<<product_description<<" "<<product_price<<endl;
         file.close();
@@ -301,6 +303,7 @@ class payment
         cout<<"File created successfully."<<endl;
         file.seekp(0,ios::end);
         cout<<"enter details of payment:\n";
+        cout<<"payment_id  "<<"payment_customer_id  "<<"payment_amount  "<<"payment_date  "<<"payment_description  \n";
         cin>>payment_id>>payment_customer_id>>payment_amount>>payment_date>>payment_description;
         file<<payment_id<<" "<<payment_customer_id<<" "<<payment_amount<<" "<<payment_date<<" "<<payment_description<<endl;
         file.close();
@@ -790,8 +793,9 @@ int main()
     {
         uobj.ins();
     }
+    while(1){
     uobj.show();
-    cout<<"Press 1 to enter management \nPress 2 to enter billing"<<endl;
+    cout<<"Press 1 to enter management \nPress 2 to enter billing\nPress 3 to exit"<<endl;
     cin>>c;
     if(c==2)
     { int s=0;
@@ -890,7 +894,11 @@ cin>>n;
     }}
     else
         cout<<"You dont have this access"<<endl;
-    }}
+    }
+    if(c==3)
+    {return 0;}
+    }
+    }
     else
         cout<<"Wrong id or pass"<<endl;
     return 0;
